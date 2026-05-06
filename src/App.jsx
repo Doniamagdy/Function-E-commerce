@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import ProductsTable from './components/ProductsTable/ProductsTable'
-import FetchProducts from './features/dashboard/FetchProducts/FetchProducts'
+import React from "react";
+import "./App.css"; 
+import {Routes, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout/MainLayout";
+import FetchProducts from "./features/dashboard/Products/FetchProducts/FetchProducts";
 
 function App() {
-
   return (
-   <FetchProducts />
-  )
+ <Routes> 
+    <Route path="/" element={<MainLayout />} >
+
+    <Route path="/products" element={<FetchProducts/>} />
+    
+    </Route>
+   </Routes>  
+  );
 }
 
-export default App
+export default App;
