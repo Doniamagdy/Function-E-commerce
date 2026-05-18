@@ -2,7 +2,7 @@
 // 2- To deal with data use axios package axios: method(URL)
 import axios from "axios";
 
-//1- get all products for users
+//1. get all products for users
 export const getProducts = async () => {
   let response = await axios.get("https://dummyjson.com/products");
   return response.data;
@@ -14,3 +14,10 @@ export const getSingleProduct = async (id)=>{
   let response = await axios.get(`https://dummyjson.com/products/${id}`)
 return response.data
 }
+
+// 3. search on product 
+export const searchProduct = async (searchWord) =>{
+  let response = await axios.get(`https://dummyjson.com/products/search?q=${searchWord}`)
+  return response.data
+}
+
