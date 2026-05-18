@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getProducts } from "../../../services/products.service";
 import Spinner from "../../../components/Spinner/Spinner";
 import ProductCard from "../../../components/ProductCard/ProductCard";
+import { Link } from "react-router-dom";
+
 
 const errorMessage = "Can not display products now, please try again later";
 const emptyStateMessage = "No products found";
@@ -38,6 +40,7 @@ function FetchProducts() {
   return (
     <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
       {allProducts.map((product) => (
+        <Link to={`/singleProduct/${product.id}`} > 
         <ProductCard
           key={product.id}
           image={product.thumbnail}
@@ -46,6 +49,7 @@ function FetchProducts() {
           description={product.description}
           category={product.category}
         />
+        </Link>
       ))}
     </div>
   );
