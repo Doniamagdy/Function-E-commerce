@@ -42,7 +42,7 @@ console.log(error)
       </div>
 
       <Button text={"Delete"} onClick={handleDelete} />
-      <Button text={"Checkout"} onClick={()=>alert("Your order has been submitted successfully!")}/>
+      <Button text={"Checkout"} onClick={()=>notify("Your order has been submitted successfully!" ,"success")}/>
     </div>
   );
 }
