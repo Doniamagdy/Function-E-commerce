@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../../components/Button/Button";
 import { addToCart } from "../../../services/cart.service";
 import {CartContext} from "../../../context/CartProvider";
-import { notify } from "../../../utils/toastify";
+import { notify } from "../../../utils/toastify.js";
 
 
 const errorMessage = "Can not display product now, please try again later";

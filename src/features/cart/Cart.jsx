@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/CartProvider";
 import Button from "../../components/Button/Button";
 import { deleteCart } from "../../services/cart.service";
-import { notify } from "../../utils/toastify";
+import { notify } from "../../utils/toastify.js";
 
 
 function Cart() {
