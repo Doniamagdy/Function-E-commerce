@@ -84,7 +84,10 @@ function FetchSingleProduct() {
   };
 
   return (
-    <div className="w-1/2 p-6 mx-auto bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+    
+    <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+
       <ProductCard
         image={product.thumbnail}
         title={product.title}
@@ -93,12 +96,14 @@ function FetchSingleProduct() {
         category={product.category}
       />
 
-      <div>
+              <div className="flex flex-wrap items-center gap-3 p-4 sm:p-6">
+
         <Button text={"+"} onClick={() => setCount(count + 1)} />
         <span>{count}</span>
         <Button text={"-"} onClick={() => count > 0 && setCount(count - 1)} />
         <Button text={"Add to cart"} onClick={handleAddProductToCart} />
       </div>
+    </div>
     </div>
   );
 }
