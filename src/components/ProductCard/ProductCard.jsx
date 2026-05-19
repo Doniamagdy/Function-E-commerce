@@ -6,9 +6,10 @@ export default function ProductCard({
   price,
   description,
   category,
+  className ="",
 }) {
   return (
-    <div className=" bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+    <div className={className}>
       {/* Image */}
       <img
         src={image}

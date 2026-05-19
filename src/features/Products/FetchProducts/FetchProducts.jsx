@@ -5,6 +5,7 @@ import ProductCard from "../../../components/ProductCard/ProductCard";
 import { Link } from "react-router-dom";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 
+
 const errorMessage = "Can not display products now, please try again later";
 const emptyStateMessage = "No products found";
 function FetchProducts() {
@@ -13,7 +14,8 @@ function FetchProducts() {
   const [error, setError] = useState(false);
   const [search, setSearch] = useState("");
 
-  const handlesSearch = async (value) => {
+
+   const handlesSearch = async (value) => {
     try {
       const data = await searchProduct(value);
       setAllProducts(data.products);
@@ -21,6 +23,8 @@ function FetchProducts() {
       console.log(error);
     }
   };
+ 
+  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -57,12 +61,13 @@ function FetchProducts() {
               image={product.thumbnail}
               title={product.title}
               price={product.price}
-              description={product.description}
               category={product.category}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
             />
           </Link>
         ))}
       </div>
+      
     </>
   );
 }

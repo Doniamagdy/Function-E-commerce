@@ -1,3 +1,3 @@
 import { toast } from 'react-toastify';
 
-export const notify = (message) => toast(message);
+export const notify = (message, color) => toast[color](message);
